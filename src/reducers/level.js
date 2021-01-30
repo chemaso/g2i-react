@@ -9,7 +9,7 @@ const level = (state = initialState, { type, selected }) => {
   switch (type) {
     case SET_LEVEL:
       return {
-        ...initialState,
+        ...state,
         selected
       }
     default:

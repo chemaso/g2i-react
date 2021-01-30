@@ -1,15 +1,22 @@
-import { SET_QUESTIONS } from '../actionTypes/question'
+import { SET_QUESTIONS, SET_CURRENT_QUESTIONS } from '../actionTypes/question'
+import { INITIAL_QUESTION } from '../constants'
 
 const initialState = {
-  list: []
+  list: [],
+  current: INITIAL_QUESTION
 }
 
-const question = (state = initialState, { type, list }) => {
-  switch (type) {
+const question = (state = initialState, action) => {
+  switch (action.type) {
     case SET_QUESTIONS:
       return {
-        ...initialState,
-        list
+        ...state,
+        list: action.list
+      }
+    case SET_CURRENT_QUESTIONS:
+      return {
+        ...state,
+        current: action.current
       }
     default:
       return state

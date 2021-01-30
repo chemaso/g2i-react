@@ -1,14 +1,15 @@
 import { SET_QUESTIONS } from '../actionTypes/question'
 
 const initialState = {
-  questions: {}
+  list: []
 }
-const question = (state = initialState, action) => {
-  switch (action.type) {
+
+const question = (state = initialState, { type, list }) => {
+  switch (type) {
     case SET_QUESTIONS:
       return {
         ...initialState,
-        questions: action.questions
+        list
       }
     default:
       return state

@@ -7,11 +7,13 @@
       "node": true, 
       "mocha": true 
     }, 
-    
+    "plugins": ["react"],
     "parser": "babel-eslint", 
     "rules": { 
       "no-console": "warn", 
       "no-use-before-define": "warn", 
+      "react/jsx-uses-react": "error",   
+      "react/jsx-uses-vars": "error",
       "spaced-comment": "warn" 
     }, 
     "extends": [ 

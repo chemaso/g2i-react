@@ -11,6 +11,9 @@ export const theme = createMuiTheme({
     lg: '60',
     xl: '90'
   },
+  fullHeight: {
+    height: '100vh'
+  },
   awesomeTitle: {
     fontWeight: '900',
     background: '-webkit-linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab)',
@@ -33,9 +36,9 @@ export const theme = createMuiTheme({
   overrides: {
     MuiTypography: {
       h2: {
-        fontSize: '4.5rem',
+        fontSize: '4rem',
         '@media (max-width:600px)': {
-          fontSize: '3rem'
+          fontSize: '2.5rem'
         }
       }
     }

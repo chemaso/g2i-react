@@ -1,10 +1,10 @@
 import React from 'react'
 import Typography from '@material-ui/core/Typography'
 import Divider from '@material-ui/core/Divider'
-import Button from '@material-ui/core/Button'
 import Grid from '@material-ui/core/Grid'
 import { makeStyles } from '@material-ui/core/styles'
 import InputSelect from 'components/common/InputSelect'
+import Button from 'components/common/ButtonWithLoading'
 import SendIcon from '@material-ui/icons/Send'
 
 const useStyles = makeStyles((theme) => ({
@@ -28,10 +28,10 @@ const useStyles = makeStyles((theme) => ({
   divider: theme.divider
 }))
 
-const HomeLayout = ({ onChange, options, initialLevel }) => {
+const HomeLayout = ({ initialLevel, loading, onChange, onStart, options }) => {
   const classes = useStyles()
   return (
-    <Grid justify="center" alignItems="center" container>
+    <Grid justify="center" alignItems="center" container className={classes.root}>
       <Grid item xs={12}>
         <Typography className={classes.title} variant="h2">
           Welcome to the Trivia Challenge!
@@ -60,7 +60,14 @@ const HomeLayout = ({ onChange, options, initialLevel }) => {
         <InputSelect options={options} initial={initialLevel} onChange={onChange} />
       </Grid>
       <Grid item className={classes.select} xs={12}>
-        <Button className={classes.button} size="large" variant="contained" endIcon={<SendIcon />}>
+        <Button
+          loading={loading}
+          onClick={onStart}
+          className={classes.button}
+          size="large"
+          variant="contained"
+          icon={<SendIcon />}
+        >
           Begin
         </Button>
       </Grid>

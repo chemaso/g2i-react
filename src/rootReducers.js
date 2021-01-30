@@ -1,9 +1,10 @@
+import answer from 'reducers/answer'
+import level from 'reducers/level'
+import question from 'reducers/question'
 import { combineReducers } from 'redux'
 
-import question from 'reducers/question'
-import level from 'reducers/level'
-
 export default combineReducers({
-  question,
-  level
+  answer,
+  level,
+  question
 })

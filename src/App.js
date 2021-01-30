@@ -1,11 +1,12 @@
 import React from 'react'
-import { Provider } from 'react-redux'
-import configStore from './store'
-import { ThemeProvider } from '@material-ui/core/styles'
+
 import CssBaseline from '@material-ui/core/CssBaseline'
-import RoutesGenerator from './router'
+import { ThemeProvider } from '@material-ui/core/styles'
+import { Provider } from 'react-redux'
 import { PersistGate } from 'redux-persist/integration/react'
 
+import RoutesGenerator from './router'
+import configStore from './store'
 import { theme } from './theme'
 import './App.css'
 

@@ -1,24 +1,36 @@
-import React, { useState } from 'react'
-import { connect } from 'react-redux'
-import { useHistory } from 'react-router-dom'
-import { bindActionCreators } from 'redux'
+import React, { useState, useEffect } from 'react'
+
 import Grid from '@material-ui/core/Grid'
 import { makeStyles } from '@material-ui/core/styles'
+import { setAnswers } from 'actions/answers'
+import { setLevel } from 'actions/level'
+import { getQuestions, setQuestion, setCurrentQuestion } from 'actions/question'
 import LayoutCard from 'components/common/LayoutCard'
 import HomeLayout from 'components/Home/layout'
 import get from 'lodash/get'
+import { HomeContainerDefaults, HomeContainerProps } from 'props/containers/Home'
+import { connect } from 'react-redux'
+import { useHistory } from 'react-router-dom'
+import { bindActionCreators } from 'redux'
+
 import { INITIAL_LEVEL, LEVEL_OPTIONS, RESULTS_AMOUNT, QUESTIONS_TYPE } from '../constants'
-import { getQuestions } from 'actions/question'
-import { setLevel } from 'actions/level'
 
 const useStyles = makeStyles((theme) => ({
   root: theme.fullHeight
 }))
 
-const Home = ({ fetchQuestions, setLevelSelected, level }) => {
+const Home = ({ fetchQuestions, setLevelSelected, level, questions, resetAnswers, resetCurrentQuestion, resetQuestion }) => {
   const [loading, setLoading] = useState(false)
   const classes = useStyles()
   const { push } = useHistory()
+
+  useEffect(() => {
+    if (questions.length > 0) {
+      resetCurrentQuestion(0)
+      resetQuestion()
+      resetAnswers([])
+    }
+  }, [])
 
   const handleSelectLevel = (value) => setLevelSelected(value)
 
@@ -34,9 +46,10 @@ const Home = ({ fetchQuestions, setLevelSelected, level }) => {
       setLoading(false)
       push('/questions')
     } catch (e) {
-      console.log(e)
+      setLoading(false)
     }
   }
+
   return (
     <Grid container justify="center" alignItems="center" className={classes.root}>
       <LayoutCard
@@ -55,17 +68,24 @@ const Home = ({ fetchQuestions, setLevelSelected, level }) => {
 }
 
 const mapStateToProps = (state) => ({
-  level: get(state, 'level.selected', INITIAL_LEVEL)
+  level: get(state, 'level.selected', INITIAL_LEVEL),
+  questions: get(state, 'question.list', [])
 })
 
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators(
     {
       fetchQuestions: getQuestions,
+      resetAnswers: setAnswers,
+      resetCurrentQuestion: setCurrentQuestion,
+      resetQuestion: setQuestion,
       setLevelSelected: setLevel
     },
     dispatch
   )
 }
+
+Home.propTypes = HomeContainerProps
+Home.defaultProps = HomeContainerDefaults
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home)

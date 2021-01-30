@@ -1,11 +1,13 @@
 import React from 'react'
-import Typography from '@material-ui/core/Typography'
+
 import Divider from '@material-ui/core/Divider'
 import Grid from '@material-ui/core/Grid'
 import { makeStyles } from '@material-ui/core/styles'
-import InputSelect from 'components/common/InputSelect'
-import Button from 'components/common/ButtonWithLoading'
+import Typography from '@material-ui/core/Typography'
 import SendIcon from '@material-ui/icons/Send'
+import Button from 'components/common/ButtonWithLoading'
+import InputSelect from 'components/common/InputSelect'
+import { HomeLayoutProps, HomeLayoutDefaults } from 'props/components/Home/layout'
 
 const useStyles = makeStyles((theme) => ({
   title: {
@@ -57,7 +59,12 @@ const HomeLayout = ({ initialLevel, loading, onChange, onStart, options }) => {
         </Typography>
       </Grid>
       <Grid item className={classes.select} xs={12}>
-        <InputSelect options={options} initial={initialLevel} onChange={onChange} />
+        <InputSelect
+          options={options}
+          loading={loading}
+          initial={initialLevel}
+          onChange={onChange}
+        />
       </Grid>
       <Grid item className={classes.select} xs={12}>
         <Button
@@ -65,6 +72,7 @@ const HomeLayout = ({ initialLevel, loading, onChange, onStart, options }) => {
           onClick={onStart}
           className={classes.button}
           size="large"
+          position="endIcon"
           variant="contained"
           icon={<SendIcon />}
         >
@@ -74,5 +82,8 @@ const HomeLayout = ({ initialLevel, loading, onChange, onStart, options }) => {
     </Grid>
   )
 }
+
+HomeLayout.propTypes = HomeLayoutProps
+HomeLayout.defaultProps = HomeLayoutDefaults
 
 export default HomeLayout

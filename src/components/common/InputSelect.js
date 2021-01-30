@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { makeStyles } from '@material-ui/core/styles'
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
+
 import {
   Typography,
   Popover,
@@ -11,8 +10,11 @@ import {
   ListItemIcon,
   ListItemText
 } from '@material-ui/core'
-import RadioButtonUncheckedIcon from '@material-ui/icons/RadioButtonUnchecked'
+import { makeStyles } from '@material-ui/core/styles'
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import RadioButtonCheckedIcon from '@material-ui/icons/RadioButtonChecked'
+import RadioButtonUncheckedIcon from '@material-ui/icons/RadioButtonUnchecked'
+import { InputSelectProps, InputSelectDefaults } from 'props/components/common/InputSelect'
 import { setCapitalize } from 'utils'
 
 const useStyles = makeStyles(() => ({
@@ -38,7 +40,7 @@ const useStyles = makeStyles(() => ({
   }
 }))
 
-const InputSelect = ({ options, onChange, initial }) => {
+const InputSelect = ({ initial, loading, options, onChange }) => {
   const classes = useStyles()
 
   const [anchorEl, setAnchorEl] = useState(null)
@@ -79,11 +81,12 @@ const InputSelect = ({ options, onChange, initial }) => {
 
   const open = Boolean(anchorEl)
   const id = open ? 'simple-popover' : undefined
-
+  const openIfNotLoading = !loading ? handleClick : () => {}
+  const selectedValue = setCapitalize(selected)
   return (
     <>
-      <Paper onClick={handleClick} component="div" className={classes.root}>
-        <Typography className={classes.select}>{setCapitalize(selected)}</Typography>
+      <Paper onClick={openIfNotLoading} component="div" className={classes.root}>
+        <Typography className={classes.select}>{selectedValue}</Typography>
         <IconButton className={classes.iconButton} aria-label="select">
           <ExpandMoreIcon />
         </IconButton>
@@ -105,7 +108,13 @@ const InputSelect = ({ options, onChange, initial }) => {
       >
         <List component="nav">
           {options.map((item, index) => (
-            <ListItem key={index} value={item} selected={item === selected} button onClick={() => handlePopover(item)}>
+            <ListItem
+              key={index}
+              value={item}
+              selected={item === selected}
+              button
+              onClick={() => handlePopover(item)}
+            >
               {renderIcon(item)}
               <ListItemText primary={setCapitalize(item)} />
             </ListItem>
@@ -115,5 +124,8 @@ const InputSelect = ({ options, onChange, initial }) => {
     </>
   )
 }
+
+InputSelect.propTypes = InputSelectProps
+InputSelect.defaultProps = InputSelectDefaults
 
 export default InputSelect

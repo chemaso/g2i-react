@@ -1,7 +1,12 @@
 import React from 'react'
+
 import Button from '@material-ui/core/Button'
 import CircularProgress from '@material-ui/core/CircularProgress'
 import { makeStyles } from '@material-ui/core/styles'
+import {
+  ButtonWithLoadingProps,
+  ButtonWithLoadingDefaults
+} from 'props/components/common/ButtonWithLoading'
 
 const useStyles = makeStyles((theme) => ({
   button: theme.awesomeButton,
@@ -13,12 +18,12 @@ const useStyles = makeStyles((theme) => ({
   }
 }))
 
-const ButtonWithLoading = ({ children, icon, loading, onStart, ...rest }) => {
+const ButtonWithLoading = ({ children, icon, loading, onStart, position, ...rest }) => {
   const classes = useStyles()
   let display = children
   let others = {
     ...rest,
-    endIcon: icon
+    [position]: icon
   }
   if (loading) {
     display = <CircularProgress classes={{ root: classes.spinner }} size={25} />
@@ -38,5 +43,8 @@ const ButtonWithLoading = ({ children, icon, loading, onStart, ...rest }) => {
     </Button>
   )
 }
+
+ButtonWithLoading.propTypes = ButtonWithLoadingProps
+ButtonWithLoading.defaultProps = ButtonWithLoadingDefaults
 
 export default ButtonWithLoading

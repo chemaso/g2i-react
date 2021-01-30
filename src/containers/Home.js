@@ -19,10 +19,10 @@ const Home = ({ fetchQuestions, setLevelSelected, level, questions, resetAnswers
   const [loading, setLoading] = useState(false)
   const classes = useContainerStyle()
   const { push } = useHistory()
-
+  const ZERO = 0
   useEffect(() => {
-    if (questions.length > 0) {
-      resetCurrentQuestion(0)
+    if (questions.length > ZERO) {
+      resetCurrentQuestion(ZERO)
       resetQuestion()
       resetAnswers([])
     }

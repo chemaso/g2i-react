@@ -3,6 +3,7 @@ import React from 'react'
 import MuiAlert from '@material-ui/lab/Alert'
 import { ResultCardDefaults, ResultCardProps } from 'props/components/Results/resultCard'
 
+import { SUCCESS, ERROR } from '../../constants'
 import { useResultCardStyles } from './styles'
 
 function Alert (props) {
@@ -13,8 +14,8 @@ const ResultCard = ({ result }) => {
   const classes = useResultCardStyles()
   const { question, correctAnswer, answer } = result
   const severity = {
-    true: 'success',
-    false: 'error'
+    true: SUCCESS,
+    false: ERROR
   }
   const isCorrect = correctAnswer === answer
   return (

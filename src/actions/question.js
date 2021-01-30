@@ -1,5 +1,5 @@
-import { getQuestions as fetchQuestions } from 'api/questions'
 import { SET_QUESTIONS, SET_CURRENT_QUESTIONS } from 'actionTypes/question'
+import { getQuestions as fetchQuestions } from 'api/questions'
 import ReactHtmlParser from 'react-html-parser'
 import { setCapitalize } from 'utils'
 

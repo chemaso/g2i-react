@@ -8,36 +8,37 @@ import CheckIcon from '@material-ui/icons/Check'
 import CloseIcon from '@material-ui/icons/Close'
 import { QuestionLayoutDefaults, QuestionLayoutProps } from 'props/components/Questions/layout'
 
+import { FULL_WIDTH } from '../../constants'
 import { useQuestionsLayoutStyles } from './styles'
 
 const QuestionsLayout = ({ category, current, difficulty, onSelect, question, total }) => {
   const classes = useQuestionsLayoutStyles()
   return (
     <Grid justify="center" alignItems="center" container className={classes.root}>
-      <Grid item xs={12}>
+      <Grid item xs={FULL_WIDTH}>
         <Typography className={classes.content} variant="h6">
           Question {current} of {total} - Difficulty: {difficulty}
         </Typography>
       </Grid>
-      <Grid item xs={12}>
+      <Grid item xs={FULL_WIDTH}>
         <Typography className={classes.title} variant="h3">
           Category:
         </Typography>
       </Grid>
-      <Grid item xs={12}>
+      <Grid item xs={FULL_WIDTH}>
         <Typography className={classes.title} variant="h5">
           {category}
         </Typography>
       </Grid>
-      <Grid item xs={12}>
+      <Grid item xs={FULL_WIDTH}>
         <Divider className={classes.divider} variant="middle" />
       </Grid>
-      <Grid item xs={12} className={classes.question}>
+      <Grid item xs={FULL_WIDTH} className={classes.question}>
         <Typography className={classes.content} variant="h5">
           {question}
         </Typography>
       </Grid>
-      <Grid item xs={12}>
+      <Grid item xs={FULL_WIDTH}>
         <Divider className={classes.divider} variant="middle" />
       </Grid>
       <Grid container justify="space-around">

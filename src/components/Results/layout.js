@@ -2,39 +2,16 @@ import React from 'react'
 
 import Divider from '@material-ui/core/Divider'
 import Grid from '@material-ui/core/Grid'
-import { makeStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
 import SendIcon from '@material-ui/icons/Send'
 import Button from 'components/common/ButtonWithLoading'
 import ResultCard from 'components/Results/resultCard'
 import { ResultsLayoutProps, ResultsLayoutDefaults } from 'props/components/Results/layout'
 
-const useStyles = makeStyles((theme) => ({
-  title: {
-    ...theme.awesomeTitle,
-    textAlign: 'center'
-  },
-  content: {
-    textAlign: 'center'
-  },
-  level: {
-    ...theme.awesomeTitle,
-    textAlign: 'center'
-  },
-  question: {
-    padding: 20
-  },
-  results: {
-    maxHeight: '50vh',
-    overflowX: 'hidden',
-    overflowY: 'auto'
-  },
-  button: theme.awesomeButton,
-  divider: theme.divider
-}))
+import { useResultsLayoutStyles } from './styles'
 
 const ResultsLayout = ({ answers, corrects, level, onSelect, total }) => {
-  const classes = useStyles()
+  const classes = useResultsLayoutStyles()
   return (
     <Grid justify="center" alignItems="center" container className={classes.root}>
       <Grid item xs={12}>

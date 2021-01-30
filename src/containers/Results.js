@@ -1,7 +1,6 @@
 import React from 'react'
 
 import Grid from '@material-ui/core/Grid'
-import { makeStyles } from '@material-ui/core/styles'
 import { setAnswers } from 'actions/answers'
 import { setLevel } from 'actions/level'
 import { setCurrentQuestion, setQuestion } from 'actions/question'
@@ -15,10 +14,7 @@ import { bindActionCreators } from 'redux'
 import { setCapitalize } from 'utils'
 
 import { INITIAL_LEVEL, INITIAL_QUESTION } from '../constants'
-
-const useStyles = makeStyles((theme) => ({
-  root: theme.fullHeight
-}))
+import { useContainerStyle } from './styles'
 
 const Results = ({
   answers,
@@ -29,7 +25,7 @@ const Results = ({
   resetLevel,
   setInitialQuestion
 }) => {
-  const classes = useStyles()
+  const classes = useContainerStyle()
   const { push } = useHistory()
   const handleRestart = async () => {
     await setInitialQuestion(INITIAL_QUESTION)

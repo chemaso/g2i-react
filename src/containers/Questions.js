@@ -1,7 +1,6 @@
 import React from 'react'
 
 import Grid from '@material-ui/core/Grid'
-import { makeStyles } from '@material-ui/core/styles'
 import { setAnswer } from 'actions/answers'
 import { setCurrentQuestion } from 'actions/question'
 import LayoutCard from 'components/common/LayoutCard'
@@ -13,12 +12,10 @@ import { useHistory } from 'react-router-dom'
 import { bindActionCreators } from 'redux'
 
 import { INITIAL_QUESTION, INITIAL_LEVEL } from '../constants'
-const useStyles = makeStyles((theme) => ({
-  root: theme.fullHeight
-}))
+import { useContainerStyle } from './styles'
 
 const Questions = ({ currentQuestion, level, questions, setCurrentAnswer, setQuestion }) => {
-  const classes = useStyles()
+  const classes = useContainerStyle()
   const { category, correctAnswer, difficulty, question } = questions[currentQuestion]
   const { push } = useHistory()
   const current = currentQuestion + 1

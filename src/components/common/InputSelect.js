@@ -10,38 +10,16 @@ import {
   ListItemIcon,
   ListItemText
 } from '@material-ui/core'
-import { makeStyles } from '@material-ui/core/styles'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import RadioButtonCheckedIcon from '@material-ui/icons/RadioButtonChecked'
 import RadioButtonUncheckedIcon from '@material-ui/icons/RadioButtonUnchecked'
 import { InputSelectProps, InputSelectDefaults } from 'props/components/common/InputSelect'
 import { setCapitalize } from 'utils'
 
-const useStyles = makeStyles(() => ({
-  root: {
-    padding: '2px 4px',
-    display: 'flex',
-    alignItems: 'center',
-    background: '#e8e8e8',
-    width: '80%',
-    '&:hover': {
-      cursor: 'pointer'
-    }
-  },
-  iconButton: {
-    padding: 10
-  },
-  select: {
-    paddingLeft: 10,
-    width: '95%'
-  },
-  popover: {
-    minWidth: '35vw'
-  }
-}))
+import { useInputSelectStyles } from './styles'
 
 const InputSelect = ({ initial, loading, options, onChange }) => {
-  const classes = useStyles()
+  const classes = useInputSelectStyles()
 
   const [anchorEl, setAnchorEl] = useState(null)
   const [selected, setSelected] = useState('')

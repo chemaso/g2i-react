@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
 import Grid from '@material-ui/core/Grid'
-import { makeStyles } from '@material-ui/core/styles'
 import { setAnswers } from 'actions/answers'
 import { setLevel } from 'actions/level'
 import { getQuestions, setQuestion, setCurrentQuestion } from 'actions/question'
@@ -14,14 +13,11 @@ import { useHistory } from 'react-router-dom'
 import { bindActionCreators } from 'redux'
 
 import { INITIAL_LEVEL, LEVEL_OPTIONS, RESULTS_AMOUNT, QUESTIONS_TYPE } from '../constants'
-
-const useStyles = makeStyles((theme) => ({
-  root: theme.fullHeight
-}))
+import { useContainerStyle } from './styles'
 
 const Home = ({ fetchQuestions, setLevelSelected, level, questions, resetAnswers, resetCurrentQuestion, resetQuestion }) => {
   const [loading, setLoading] = useState(false)
-  const classes = useStyles()
+  const classes = useContainerStyle()
   const { push } = useHistory()
 
   useEffect(() => {

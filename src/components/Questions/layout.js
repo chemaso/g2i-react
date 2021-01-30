@@ -3,32 +3,15 @@ import React from 'react'
 import Button from '@material-ui/core/Button'
 import Divider from '@material-ui/core/Divider'
 import Grid from '@material-ui/core/Grid'
-import { makeStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
 import CheckIcon from '@material-ui/icons/Check'
 import CloseIcon from '@material-ui/icons/Close'
 import { QuestionLayoutDefaults, QuestionLayoutProps } from 'props/components/Questions/layout'
 
-const useStyles = makeStyles((theme) => ({
-  title: {
-    ...theme.awesomeTitle,
-    textAlign: 'center'
-  },
-  content: {
-    textAlign: 'center'
-  },
-  button: {
-    fontWeight: '900',
-    minWidth: '30vw'
-  },
-  question: {
-    padding: 20
-  },
-  divider: theme.divider
-}))
+import { useQuestionsLayoutStyles } from './styles'
 
 const QuestionsLayout = ({ category, current, difficulty, onSelect, question, total }) => {
-  const classes = useStyles()
+  const classes = useQuestionsLayoutStyles()
   return (
     <Grid justify="center" alignItems="center" container className={classes.root}>
       <Grid item xs={12}>

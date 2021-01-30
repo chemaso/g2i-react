@@ -2,21 +2,12 @@ import React from 'react'
 
 import Card from '@material-ui/core/Card'
 import CardContent from '@material-ui/core/CardContent'
-import { makeStyles } from '@material-ui/core/styles'
 import { LayoutCardProps, LayoutCardDefaults } from 'props/components/common/LayoutCard'
 
-const useStyles = makeStyles(({ layout }) => ({
-  root: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    height: `${layout.xl}vh`,
-    width: `${layout.xl}vw`
-  }
-}))
+import { useLayoutCardStyles } from './styles'
 
 const LayoutCard = ({ render }) => {
-  const classes = useStyles()
+  const classes = useLayoutCardStyles()
   return (
     <Card className={classes.root}>
       <CardContent>{render()}</CardContent>

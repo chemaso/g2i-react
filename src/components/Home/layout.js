@@ -2,36 +2,16 @@ import React from 'react'
 
 import Divider from '@material-ui/core/Divider'
 import Grid from '@material-ui/core/Grid'
-import { makeStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
 import SendIcon from '@material-ui/icons/Send'
 import Button from 'components/common/ButtonWithLoading'
 import InputSelect from 'components/common/InputSelect'
 import { HomeLayoutProps, HomeLayoutDefaults } from 'props/components/Home/layout'
 
-const useStyles = makeStyles((theme) => ({
-  title: {
-    ...theme.awesomeTitle,
-    textAlign: 'center'
-  },
-  content: {
-    textAlign: 'center'
-  },
-  level: {
-    ...theme.awesomeTitle,
-    textAlign: 'center'
-  },
-  select: {
-    display: 'flex',
-    justifyContent: 'center',
-    margin: 20
-  },
-  button: theme.awesomeButton,
-  divider: theme.divider
-}))
+import { useHomeLayoutStyles } from './styles'
 
 const HomeLayout = ({ initialLevel, loading, onChange, onStart, options }) => {
-  const classes = useStyles()
+  const classes = useHomeLayoutStyles()
   return (
     <Grid justify="center" alignItems="center" container className={classes.root}>
       <Grid item xs={12}>

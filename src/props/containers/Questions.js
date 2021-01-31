@@ -25,7 +25,7 @@ export const QuestionsContainerProps = PropTypes.shape({
 
 export const QuestionsContainerDefaults = {
   setQuestion: () => {},
-  level: '',
+  level: 'hard',
   currentQuestion: 0,
   isRequired: {},
   questions: [questionDefaults],

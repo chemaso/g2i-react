@@ -29,7 +29,7 @@ const InputSelect = ({ initial, loading, options, onChange }) => {
   }, [])
 
   const handleClick = (event) => {
-    setAnchorEl(event.currentTarget)
+    setAnchorEl(event?.currentTarget)
   }
 
   const handleClose = () => {

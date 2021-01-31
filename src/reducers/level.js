@@ -1,7 +1,7 @@
 import { SET_LEVEL } from 'actionTypes/level'
 import { INITIAL_LEVEL } from 'resources/constants'
 
-const initialState = {
+export const initialState = {
   selected: INITIAL_LEVEL
 }
 

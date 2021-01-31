@@ -1,7 +1,7 @@
 import { SET_QUESTIONS, SET_CURRENT_QUESTIONS } from 'actionTypes/question'
 import { INITIAL_QUESTION } from 'resources/constants'
 
-const initialState = {
+export const initialState = {
   list: [],
   current: INITIAL_QUESTION
 }

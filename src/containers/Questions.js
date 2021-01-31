@@ -16,7 +16,8 @@ import { useContainerStyle } from './styles'
 
 const Questions = ({ currentQuestion, level, questions, setCurrentAnswer, setQuestion }) => {
   const classes = useContainerStyle()
-  const { category, correctAnswer, difficulty, question } = questions[currentQuestion]
+  const selectQuestion = get(questions, `${[currentQuestion]}`, {})
+  const { category, correctAnswer, difficulty, question } = selectQuestion
   const { push } = useHistory()
   const current = currentQuestion + 1
 

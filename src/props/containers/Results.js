@@ -36,3 +36,8 @@ export const ResultsContainerDefaults = {
   resetLevel: () => {},
   setInitialQuestion: () => {}
 }
+
+export {
+  resultDefaults,
+  resultProps
+}

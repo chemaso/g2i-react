@@ -1,6 +1,6 @@
 import { SET_ANSWER, SET_ANSWERS } from '../actionTypes/answers'
 
-const initialState = {
+export const initialState = {
   list: []
 }
 

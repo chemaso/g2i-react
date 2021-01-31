@@ -30,7 +30,7 @@ export const useLayoutCardStyles = makeStyles(({ layout }) => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    height: `${layout.xl}vh`,
-    width: `${layout.xl}vw`
+    height: `${layout?.xl}vh`,
+    width: `${layout?.xl}vw`
   }
 }))

@@ -50,6 +50,7 @@ const HomeLayout = ({ initialLevel, loading, onChange, onStart, options }) => {
       </Grid>
       <Grid item className={classes.select} xs={FULL_WIDTH}>
         <Button
+          id='begin-button'
           loading={loading}
           onClick={onStart}
           className={classes.button}

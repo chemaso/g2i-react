@@ -14,6 +14,7 @@ import { INITIAL_QUESTION, INITIAL_LEVEL } from 'resources/constants'
 
 import { useContainerStyle } from './styles'
 
+// Question is a container connected with redux store
 const Questions = ({ currentQuestion, level, questions, setCurrentAnswer, setQuestion }) => {
   const classes = useContainerStyle()
   const selectQuestion = get(questions, `${[currentQuestion]}`, {})
@@ -21,6 +22,7 @@ const Questions = ({ currentQuestion, level, questions, setCurrentAnswer, setQue
   const { push } = useHistory()
   const current = currentQuestion + 1
 
+  // handles and save the users answer in the redux store, then moves to the next one
   const handleAnswer = (value) => {
     const payload = {
       answer: value,

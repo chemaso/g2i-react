@@ -2,6 +2,8 @@ import { createMuiTheme } from '@material-ui/core/styles'
 
 const fonts = "'Lato', 'Poppins', sans-serif"
 
+// global styling config for Material UI
+
 export const theme = createMuiTheme({
   typography: {
     fontFamily: fonts

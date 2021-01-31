@@ -12,6 +12,7 @@ import { strings } from 'resources/strings'
 
 import { useHomeLayoutStyles } from './styles'
 
+// HomeLayout is a component contains the initial page layout static data and inputs
 const HomeLayout = ({ initialLevel, loading, onChange, onStart, options }) => {
   const classes = useHomeLayoutStyles()
   return (

@@ -16,6 +16,7 @@ import { setCapitalize } from 'resources/utils'
 
 import { useContainerStyle } from './styles'
 
+// Results is a container connected to redux store
 const Results = ({
   answers,
   level,
@@ -27,6 +28,8 @@ const Results = ({
 }) => {
   const classes = useContainerStyle()
   const { push } = useHistory()
+
+  // clean the store and returns to initial page
   const handleRestart = async () => {
     await setInitialQuestion(INITIAL_QUESTION)
     await resetLevel(INITIAL_LEVEL)

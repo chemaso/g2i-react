@@ -15,11 +15,22 @@ import { INITIAL_LEVEL, LEVEL_OPTIONS, RESULTS_AMOUNT, QUESTIONS_TYPE } from 're
 
 import { useContainerStyle } from './styles'
 
-const Home = ({ fetchQuestions, setLevelSelected, level, questions, resetAnswers, resetCurrentQuestion, resetQuestion }) => {
+// Home container connected with redux store
+const Home = ({
+  fetchQuestions,
+  setLevelSelected,
+  level,
+  questions,
+  resetAnswers,
+  resetCurrentQuestion,
+  resetQuestion
+}) => {
   const [loading, setLoading] = useState(false)
   const classes = useContainerStyle()
   const { push } = useHistory()
   const ZERO = 0
+
+  // resets the questions if the object is not empty
   useEffect(() => {
     if (questions.length > ZERO) {
       resetCurrentQuestion(ZERO)
@@ -28,8 +39,10 @@ const Home = ({ fetchQuestions, setLevelSelected, level, questions, resetAnswers
     }
   }, [])
 
+  // sets the difficulty of the questions
   const handleSelectLevel = (value) => setLevelSelected(value)
 
+  // handles begin button invokes a redux action
   const handleStart = async () => {
     setLoading(true)
     const params = {

@@ -6,10 +6,12 @@ import { SUCCESS, ERROR } from 'resources/constants'
 
 import { useResultCardStyles } from './styles'
 
+// Alert render the alert MU component
 function Alert (props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />
 }
 
+// Render a result card with success or error icon and style
 const ResultCard = ({ result }) => {
   const classes = useResultCardStyles()
   const { question, correctAnswer, answer } = result

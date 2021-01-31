@@ -12,6 +12,7 @@ import { strings } from 'resources/strings'
 
 import { useQuestionsLayoutStyles } from './styles'
 
+// QuestionsLayout is a component contain the each question layout with buttons
 const QuestionsLayout = ({ category, current, difficulty, onSelect, question, total }) => {
   const classes = useQuestionsLayoutStyles()
   return (

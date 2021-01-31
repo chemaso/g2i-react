@@ -28,20 +28,24 @@ const InputSelect = ({ initial, loading, options, onChange }) => {
     setSelected(initial)
   }, [])
 
+  // Open the popover with options
   const handleClick = (event) => {
     setAnchorEl(event?.currentTarget)
   }
 
+  // Close the popover with options
   const handleClose = () => {
     setAnchorEl(null)
   }
 
+  // Select option from the popover
   const handlePopover = (item) => {
     setSelected(item)
     onChange(item)
     handleClose()
   }
 
+  // render correct icon for selected / unselected
   const renderIcon = (value) => {
     if (value === selected) {
       return (

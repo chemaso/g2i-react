@@ -1,3 +1,5 @@
+// strings contains the app static texts
+
 export const strings = {
   home: {
     welcome: 'Welcome to the Trivia Challenge!',

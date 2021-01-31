@@ -21,10 +21,14 @@ const useStyles = makeStyles((theme) => ({
 const ButtonWithLoading = ({ children, icon, loading, onStart, position, ...rest }) => {
   const classes = useStyles()
   let display = children
+
+  // add remaining props with icon
   let others = {
     ...rest,
     [position]: icon
   }
+
+  // show a loading spinner in the button when this is loading
   if (loading) {
     display = <CircularProgress classes={{ root: classes.spinner }} size={25} />
     others = {

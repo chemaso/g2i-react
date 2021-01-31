@@ -12,6 +12,7 @@ import { strings } from 'resources/strings'
 
 import { useResultsLayoutStyles } from './styles'
 
+// ResultsLayout is a component contains the result list and the return button
 const ResultsLayout = ({ answers, corrects, level, onSelect, total }) => {
   const classes = useResultsLayoutStyles()
   return (

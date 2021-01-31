@@ -1,5 +1,5 @@
-import { SET_LEVEL } from '../actionTypes/level'
-import { INITIAL_LEVEL } from '../constants'
+import { SET_LEVEL } from 'actionTypes/level'
+import { INITIAL_LEVEL } from 'resources/constants'
 
 const initialState = {
   selected: INITIAL_LEVEL

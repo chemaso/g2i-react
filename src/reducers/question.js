@@ -1,5 +1,5 @@
-import { SET_QUESTIONS, SET_CURRENT_QUESTIONS } from '../actionTypes/question'
-import { INITIAL_QUESTION } from '../constants'
+import { SET_QUESTIONS, SET_CURRENT_QUESTIONS } from 'actionTypes/question'
+import { INITIAL_QUESTION } from 'resources/constants'
 
 const initialState = {
   list: [],

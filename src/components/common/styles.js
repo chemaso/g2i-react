@@ -20,7 +20,7 @@ export const useInputSelectStyles = makeStyles(() => ({
     width: '95%'
   },
   popover: {
-    minWidth: '35vw'
+    minWidth: '35vw !important'
   }
 }))
 

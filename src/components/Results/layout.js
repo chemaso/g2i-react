@@ -36,7 +36,7 @@ const ResultsLayout = ({ answers, corrects, level, onSelect, total }) => {
       </Grid>
       <Grid item xs={FULL_WIDTH} className={classes.results}>
         {answers.map((item) => (
-          <ResultCard result={item} />
+          <ResultCard key={item.question} result={item} />
         ))}
       </Grid>
       <Grid item xs={FULL_WIDTH}>

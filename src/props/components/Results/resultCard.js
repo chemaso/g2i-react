@@ -13,9 +13,11 @@ export const resultDefaults = {
 }
 
 export const ResultCardProps = PropTypes.shape({
+  isRequired: PropTypes.object,
   result: resultProps
 })
 
 export const ResultCardDefaults = {
+  isRequired: {},
   result: resultDefaults
 }

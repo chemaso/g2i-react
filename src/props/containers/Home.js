@@ -2,6 +2,7 @@ import PropTypes from 'prop-types'
 
 export const HomeContainerProps = PropTypes.shape({
   fetchQuestions: PropTypes.func,
+  isRequired: PropTypes.object,
   level: PropTypes.string,
   resetAnswers: PropTypes.func,
   resetCurrentQuestion: PropTypes.func,
@@ -11,6 +12,7 @@ export const HomeContainerProps = PropTypes.shape({
 
 export const HomeContainerDefaults = {
   fetchQuestions: () => {},
+  isRequired: {},
   level: '',
   resetAnswers: () => {},
   resetCurrentQuestion: () => {},

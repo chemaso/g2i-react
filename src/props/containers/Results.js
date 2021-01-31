@@ -17,6 +17,7 @@ const questionDefaults = {
 
 export const ResultsContainerProps = PropTypes.shape({
   answers: PropTypes.arrayOf(resultProps),
+  isRequired: PropTypes.object,
   level: PropTypes.string,
   questions: PropTypes.arrayOf(questionProps),
   resetAnswer: PropTypes.func,
@@ -27,6 +28,7 @@ export const ResultsContainerProps = PropTypes.shape({
 
 export const ResultsContainerDefaults = {
   answers: [resultDefaults],
+  isRequired: {},
   level: '',
   questions: [questionDefaults],
   resetAnswer: () => {},

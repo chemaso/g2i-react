@@ -11,8 +11,8 @@ import { HomeContainerDefaults, HomeContainerProps } from 'props/containers/Home
 import { connect } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 import { bindActionCreators } from 'redux'
+import { INITIAL_LEVEL, LEVEL_OPTIONS, RESULTS_AMOUNT, QUESTIONS_TYPE } from 'resources/constants'
 
-import { INITIAL_LEVEL, LEVEL_OPTIONS, RESULTS_AMOUNT, QUESTIONS_TYPE } from '../constants'
 import { useContainerStyle } from './styles'
 
 const Home = ({ fetchQuestions, setLevelSelected, level, questions, resetAnswers, resetCurrentQuestion, resetQuestion }) => {

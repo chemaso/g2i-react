@@ -5,9 +5,9 @@ import { ThemeProvider } from '@material-ui/core/styles'
 import { Provider } from 'react-redux'
 import { PersistGate } from 'redux-persist/integration/react'
 
+import configStore from './reducers/store'
+import { theme } from './resources/theme'
 import RoutesGenerator from './router'
-import configStore from './store'
-import { theme } from './theme'
 import './App.css'
 
 function App () {

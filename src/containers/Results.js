@@ -11,9 +11,9 @@ import { ResultsContainerProps, ResultsContainerDefaults } from 'props/container
 import { connect } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 import { bindActionCreators } from 'redux'
-import { setCapitalize } from 'utils'
+import { INITIAL_LEVEL, INITIAL_QUESTION } from 'resources/constants'
+import { setCapitalize } from 'resources/utils'
 
-import { INITIAL_LEVEL, INITIAL_QUESTION } from '../constants'
 import { useContainerStyle } from './styles'
 
 const Results = ({

@@ -7,8 +7,9 @@ import SendIcon from '@material-ui/icons/Send'
 import Button from 'components/common/ButtonWithLoading'
 import ResultCard from 'components/Results/resultCard'
 import { ResultsLayoutProps, ResultsLayoutDefaults } from 'props/components/Results/layout'
+import { FULL_WIDTH } from 'resources/constants'
+import { strings } from 'resources/strings'
 
-import { FULL_WIDTH } from '../../constants'
 import { useResultsLayoutStyles } from './styles'
 
 const ResultsLayout = ({ answers, corrects, level, onSelect, total }) => {
@@ -17,17 +18,17 @@ const ResultsLayout = ({ answers, corrects, level, onSelect, total }) => {
     <Grid justify="center" alignItems="center" container className={classes.root}>
       <Grid item xs={FULL_WIDTH}>
         <Typography className={classes.content} variant="h6">
-          Difficulty: {level}
+          {strings.results.difficulty} {level}
         </Typography>
       </Grid>
       <Grid item xs={FULL_WIDTH}>
         <Typography className={classes.title} variant="h3">
-          Results:
+          {strings.results.results}
         </Typography>
       </Grid>
       <Grid item xs={FULL_WIDTH}>
         <Typography className={classes.title} variant="h5">
-          You score {corrects} / {total}
+          {strings.results.score} {corrects} / {total}
         </Typography>
       </Grid>
       <Grid item xs={FULL_WIDTH}>
@@ -51,7 +52,7 @@ const ResultsLayout = ({ answers, corrects, level, onSelect, total }) => {
           variant="contained"
           icon={<SendIcon />}
         >
-          Play Again?
+          {strings.results.again}
         </Button>
       </Grid>
     </Grid>

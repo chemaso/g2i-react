@@ -7,8 +7,9 @@ import SendIcon from '@material-ui/icons/Send'
 import Button from 'components/common/ButtonWithLoading'
 import InputSelect from 'components/common/InputSelect'
 import { HomeLayoutProps, HomeLayoutDefaults } from 'props/components/Home/layout'
+import { FULL_WIDTH } from 'resources/constants'
+import { strings } from 'resources/strings'
 
-import { FULL_WIDTH } from '../../constants'
 import { useHomeLayoutStyles } from './styles'
 
 const HomeLayout = ({ initialLevel, loading, onChange, onStart, options }) => {
@@ -17,7 +18,7 @@ const HomeLayout = ({ initialLevel, loading, onChange, onStart, options }) => {
     <Grid justify="center" alignItems="center" container className={classes.root}>
       <Grid item xs={FULL_WIDTH}>
         <Typography className={classes.title} variant="h2">
-          Welcome to the Trivia Challenge!
+          {strings.home.welcome}
         </Typography>
       </Grid>
       <Grid item xs={FULL_WIDTH}>
@@ -25,10 +26,10 @@ const HomeLayout = ({ initialLevel, loading, onChange, onStart, options }) => {
       </Grid>
       <Grid item xs={FULL_WIDTH}>
         <Typography className={classes.content} variant="h5">
-          You will be presented with 10 True or False questions.
+          {strings.home.description}
         </Typography>
         <Typography className={classes.content} variant="h5">
-          Can you score 100%?
+          {strings.home.score}
         </Typography>
       </Grid>
       <Grid item xs={FULL_WIDTH}>
@@ -36,7 +37,7 @@ const HomeLayout = ({ initialLevel, loading, onChange, onStart, options }) => {
       </Grid>
       <Grid item xs={FULL_WIDTH}>
         <Typography className={classes.level} variant="h5">
-          Please select a difficulty level:
+          {strings.home.difficulty}
         </Typography>
       </Grid>
       <Grid item className={classes.select} xs={FULL_WIDTH}>
@@ -57,7 +58,7 @@ const HomeLayout = ({ initialLevel, loading, onChange, onStart, options }) => {
           variant="contained"
           icon={<SendIcon />}
         >
-          Begin
+          {strings.home.begin}
         </Button>
       </Grid>
     </Grid>

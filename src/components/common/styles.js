@@ -1,16 +1,5 @@
 import { makeStyles } from '@material-ui/core/styles'
 
-// styles for ButtonWithLoading
-export const useButtonWithLoadingStyles = makeStyles((theme) => ({
-  button: theme.awesomeButton,
-  spinner: {
-    color: '#ffffffde'
-  },
-  root: {
-    minWidth: '120px'
-  }
-}))
-
 // styles for InputSelect
 export const useInputSelectStyles = makeStyles(() => ({
   root: {

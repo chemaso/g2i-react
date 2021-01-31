@@ -2,8 +2,8 @@ import React from 'react'
 
 import MuiAlert from '@material-ui/lab/Alert'
 import { ResultCardDefaults, ResultCardProps } from 'props/components/Results/resultCard'
+import { SUCCESS, ERROR } from 'resources/constants'
 
-import { SUCCESS, ERROR } from '../../constants'
 import { useResultCardStyles } from './styles'
 
 function Alert (props) {

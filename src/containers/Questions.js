@@ -10,8 +10,8 @@ import { QuestionsContainerProps, QuestionsContainerDefaults } from 'props/conta
 import { connect } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 import { bindActionCreators } from 'redux'
+import { INITIAL_QUESTION, INITIAL_LEVEL } from 'resources/constants'
 
-import { INITIAL_QUESTION, INITIAL_LEVEL } from '../constants'
 import { useContainerStyle } from './styles'
 
 const Questions = ({ currentQuestion, level, questions, setCurrentAnswer, setQuestion }) => {

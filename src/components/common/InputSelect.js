@@ -14,7 +14,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import RadioButtonCheckedIcon from '@material-ui/icons/RadioButtonChecked'
 import RadioButtonUncheckedIcon from '@material-ui/icons/RadioButtonUnchecked'
 import { InputSelectProps, InputSelectDefaults } from 'props/components/common/InputSelect'
-import { setCapitalize } from 'utils'
+import { setCapitalize } from 'resources/utils'
 
 import { useInputSelectStyles } from './styles'
 

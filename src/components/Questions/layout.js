@@ -7,8 +7,9 @@ import Typography from '@material-ui/core/Typography'
 import CheckIcon from '@material-ui/icons/Check'
 import CloseIcon from '@material-ui/icons/Close'
 import { QuestionLayoutDefaults, QuestionLayoutProps } from 'props/components/Questions/layout'
+import { FULL_WIDTH } from 'resources/constants'
+import { strings } from 'resources/strings'
 
-import { FULL_WIDTH } from '../../constants'
 import { useQuestionsLayoutStyles } from './styles'
 
 const QuestionsLayout = ({ category, current, difficulty, onSelect, question, total }) => {
@@ -17,12 +18,13 @@ const QuestionsLayout = ({ category, current, difficulty, onSelect, question, to
     <Grid justify="center" alignItems="center" container className={classes.root}>
       <Grid item xs={FULL_WIDTH}>
         <Typography className={classes.content} variant="h6">
-          Question {current} of {total} - Difficulty: {difficulty}
+          {strings.questions.question} {current} {strings.questions.of} {total}{' '}
+          {strings.questions.difficulty} {difficulty}
         </Typography>
       </Grid>
       <Grid item xs={FULL_WIDTH}>
         <Typography className={classes.title} variant="h3">
-          Category:
+          {strings.questions.category}
         </Typography>
       </Grid>
       <Grid item xs={FULL_WIDTH}>
@@ -50,7 +52,7 @@ const QuestionsLayout = ({ category, current, difficulty, onSelect, question, to
           variant="contained"
           startIcon={<CheckIcon />}
         >
-          True
+          {strings.questions.true}
         </Button>
         <Button
           onClick={() => onSelect(false)}
@@ -60,7 +62,7 @@ const QuestionsLayout = ({ category, current, difficulty, onSelect, question, to
           variant="contained"
           startIcon={<CloseIcon />}
         >
-          False
+          {strings.questions.false}
         </Button>
       </Grid>
     </Grid>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 
 import Grid from '@material-ui/core/Grid'
 import { setAnswers } from 'actions/answers'
@@ -40,10 +40,10 @@ const Home = ({
   }, [])
 
   // sets the difficulty of the questions
-  const handleSelectLevel = (value) => setLevelSelected(value)
+  const handleSelectLevel = useCallback((value) => setLevelSelected(value), [])
 
   // handles begin button invokes a redux action
-  const handleStart = async () => {
+  const handleStart = useCallback(async () => {
     setLoading(true)
     const params = {
       amount: RESULTS_AMOUNT,
@@ -57,7 +57,7 @@ const Home = ({
     } catch (e) {
       setLoading(false)
     }
-  }
+  }, [level])
 
   return (
     <Grid container justify="center" alignItems="center" className={classes.root}>

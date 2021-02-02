@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 
 import MuiAlert from '@material-ui/lab/Alert'
 import { ResultCardDefaults, ResultCardProps } from 'props/components/Results/resultCard'
@@ -30,4 +30,4 @@ const ResultCard = ({ result }) => {
 ResultCard.propTypes = ResultCardProps
 ResultCard.defaultProps = ResultCardDefaults
 
-export default ResultCard
+export default memo(ResultCard)

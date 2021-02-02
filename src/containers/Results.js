@@ -31,10 +31,12 @@ const Results = ({
 
   // clean the store and returns to initial page
   const handleRestart = async () => {
-    await setInitialQuestion(INITIAL_QUESTION)
-    await resetLevel(INITIAL_LEVEL)
-    await resetAnswer([])
-    await resetQuestions([])
+    await Promise.all([
+      setInitialQuestion(INITIAL_QUESTION),
+      resetLevel(INITIAL_LEVEL),
+      resetAnswer([]),
+      resetQuestions([])
+    ])
     push('/')
   }
 

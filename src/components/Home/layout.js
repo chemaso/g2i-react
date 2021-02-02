@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 
 import Divider from '@material-ui/core/Divider'
 import Grid from '@material-ui/core/Grid'
@@ -70,4 +70,4 @@ const HomeLayout = ({ initialLevel, loading, onChange, onStart, options }) => {
 HomeLayout.propTypes = HomeLayoutProps
 HomeLayout.defaultProps = HomeLayoutDefaults
 
-export default HomeLayout
+export default memo(HomeLayout)

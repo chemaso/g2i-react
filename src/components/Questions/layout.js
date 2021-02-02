@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 
 import Button from '@material-ui/core/Button'
 import Divider from '@material-ui/core/Divider'
@@ -73,4 +73,4 @@ const QuestionsLayout = ({ category, current, difficulty, onSelect, question, to
 QuestionsLayout.propTypes = QuestionLayoutProps
 QuestionsLayout.defaultProps = QuestionLayoutDefaults
 
-export default QuestionsLayout
+export default memo(QuestionsLayout)
